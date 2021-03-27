@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen">
-    <div class="w-28 text-center py-10 bg-yellow-300">
+  <div class="h-screen fixed">
+    <div class="w-28 text-center py-10 border-r-2 border-gray-600 bg-yellow-300">
       <div class="title">
         <span class="font-black text-2xl text-black">Phar</span><span class="font-black text-2xl text-yellow-600">ax</span>
       </div>
