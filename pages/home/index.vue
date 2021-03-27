@@ -1,10 +1,14 @@
 <template>
-  <div class="h-screen w-full flex items-center justify-center">
-    <div class="title">This is Homepage</div>
-    
+  <div class="h-screen w-full">
+    <Sidebar />
   </div>
 </template>
 
 <script>
-export default {}
+import Sidebar from '~/components/layouts/Sidebar'
+export default {
+  components: {
+    Sidebar,
+  },
+}
 </script>
