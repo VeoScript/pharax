@@ -2,10 +2,10 @@
   <!-- Welcome Page -->
   <div class="h-screen w-full flex items-center justify-center">
     <div class="flex-row w-full text-center">
-      <div class="title font-bold text-lg text-gray-800">
-        Welcome to <span class="font-extrabold text-2xl text-black">Phar</span><span class="font-bold text-2xl text-yellow-400">ax</span>
+      <div class="title font-bold text-2xl text-gray-800">
+        Welcome to <span class="font-extrabold text-3xl text-gray-800">Phar</span><span class="font-bold text-3xl text-yellow-400">ax</span>
       </div>
-      <div class="subtitle">Your pharmacy assistant solution.</div>
+      <div class="subtitle text-sm mt-2">Your pharmacy assistant solution.</div>
       <div class="flex justify-center">
         <form @submit.prevent="pressLogin" class="mt-3 px-3 w-96">
           <div class="control-holder my-3">
