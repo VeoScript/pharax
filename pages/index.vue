@@ -7,7 +7,7 @@
       </div>
       <div class="subtitle">Your pharmacy assistant solution.</div>
       <div class="flex justify-center">
-        <form @submit.prevent="pressLogin" class="mt-3 w-96">
+        <form @submit.prevent="pressLogin" class="mt-3 px-3 w-96">
           <div class="control-holder my-3">
             <input class="ring-4 ring-yellow-300 w-full rounded-full my-2 px-5 py-3 focus:outline-none focus:ring-yellow-400" type="text" placeholder="Email or Username">
           </div>
