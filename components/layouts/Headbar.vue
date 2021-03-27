@@ -6,8 +6,8 @@
         <div class="mt-1 ml-1 text-lg">Welcome back to Pharax</div>
       </div>
       <div class="clock flex-col items-center">
-        <div class="time text-5xl font-bold text-gray-800">03:33 PM</div>
-        <div class="date text-right text-gray-800">September 13, 2021</div>
+        <div class="time text-4xl font-bold text-gray-800">{{ hours }}{{ minutes }}{{ sec }}{{ ampm }}</div>
+        <div class="date mt-1 text-right text-gray-800"><span v-for="(day, i) in days" :key="i" class="capitalize font-bold" :class="{hidden:day.active}">{{ day.text }},</span> {{ month }} {{ date }}, {{ year }}</div>
       </div>
     </div>
     <div class="card flex w-full justify-end px-10 py-5 rounded-full">
@@ -19,10 +19,71 @@
         </div>
         <div class="mt-2 ml-1 text-lg">
           <nuxt-link to="/">
-            <img class="h-16 w-16 rounded-full" src="https://pbs.twimg.com/media/ExakeKmVgAUgkft?format=jpg&name=large" alt="profile_picture">
+            <img class="h-14 w-14 transform hover:scale-95 ring-4 ring-yellow-300 rounded-full" src="https://pbs.twimg.com/media/ExakeKmVgAUgkft?format=jpg&name=large" alt="profile_picture">
           </nuxt-link>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      days: [
+        {text:"sun", active: true},
+        {text:"mon", active: true},
+        {text:"tue", active: true},
+        {text:"wed", active: true},
+        {text:"thu", active: true},
+        {text:"fri", active: true},
+        {text:"sat", active: true}
+      ],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      ampm:'',
+      hours: '',
+      minutes:'',
+      sec: '' ,
+      month:'',
+      date: '',
+      year: ''
+    }
+  },
+  methods:{
+    startClock(){
+      var THIS = this;
+
+      setInterval(() => {
+        var a = new Date().getTime() / 1e3,
+            b = new Date,
+            c = b.getHours(),
+            d = b.getMinutes(),
+            e = b.getSeconds(),
+            f = b.getMilliseconds(),
+            g = f.toString().slice(0, -2),
+            h = b.getDay(),
+            i = 12 <= c ? 'PM' : 'AM',
+            j = b.getMonth(),
+            k = b.getDate(),
+            l = b.getFullYear();
+        THIS.$data.ampm = i;
+          12 < c && (c %= 12), 
+          0 == c && (c = 12), 
+          9 >= e && (e = '0' + e), 
+          9 >= d && (d = '0' + d), 
+          THIS.$data.hours = c, 
+          THIS.$data.minutes = `:${d}:`, 
+          THIS.$data.sec = e, 
+          THIS.$data.month = THIS.$data.months[j], 
+          THIS.$data.date = k, 
+          THIS.$data.year = l;
+          THIS.$data.days[h].active = false;
+    }, 100)
+    }
+  },
+  created() {
+    this.startClock();
+  }
+}
+</script>
