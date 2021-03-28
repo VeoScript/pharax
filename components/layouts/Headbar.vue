@@ -1,6 +1,6 @@
 <template>
   <div class="flex ml-32 mr-10 pt-5">
-    <div class="card shadow-lg flex w-full bg-yellow-500 px-10 py-5 rounded-xl">
+    <div class="card shadow-lg flex w-full bg-yellow-400 px-10 py-5 rounded-xl">
       <div class="flex-auto text-white">
         <div class="text-4xl font-medium">Hello, Lalisa!</div>
         <div class="mt-1 ml-1 text-lg">Welcome back to Pharax</div>
