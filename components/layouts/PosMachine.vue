@@ -10,11 +10,19 @@
       </div>
       <div class="w-full ml-5">
         <div class="card bg-gray-700 p-5 rounded-xl">
-          <div class="text-white">Queued Orders</div>
-          <div class="mt-2" v-for="(order, i) in orders" :key="i">
-            <div class="flex items-center justify-between px-5 py-3 rounded-xl bg-gray-900 text-white">
+          <div class="text-white font-bold mb-5">Queued Orders</div>
+          <div class="flex items-center justify-between px-5 mt-2 text-sm text-white">
+            <div>Product</div>
+            <div>Price</div>
+            <div>Actions</div>
+          </div>
+          <div class="mt-1" v-for="(order, i) in orders" :key="i">
+            <div class="flex items-center justify-between px-5 py-3 rounded-xl bg-gray-900 text-white text-xs">
               <div>{{order.item_name}}</div>
-              <div>{{order.item_price}}</div>
+              <div>&#8369; {{order.item_price}}</div>
+              <div>
+                <button class="px-3 py-1 text-xs rounded-full bg-red-600 hover:bg-red-500">Delete</button>
+              </div>
             </div>
           </div>
         </div>
