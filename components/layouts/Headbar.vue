@@ -2,11 +2,11 @@
   <div class="flex ml-32 mr-10 pt-5">
     <div class="card shadow-lg flex w-full bg-yellow-500 px-10 py-5 rounded-xl">
       <div class="flex-auto text-white">
-        <div class="text-4xl font-medium">Hello, Jerome!</div>
+        <div class="text-4xl font-medium">Hello, Lalisa!</div>
         <div class="mt-1 ml-1 text-lg">Welcome back to Pharax</div>
       </div>
       <div class="clock flex-col items-center">
-        <div class="time text-4xl font-bold text-gray-800">{{ hours }}{{ minutes }}{{ sec }}{{ ampm }}</div>
+        <div class="time text-4xl font-bold text-gray-800">{{ hours }}{{ minutes }}{{ sec }}&nbsp;{{ ampm }}</div>
         <div class="date mt-1 text-right text-gray-800"><span v-for="(day, i) in days" :key="i" class="capitalize font-bold" :class="{hidden:day.active}">{{ day.text }},</span> {{ month }} {{ date }}, {{ year }}</div>
       </div>
     </div>
