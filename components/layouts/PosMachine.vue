@@ -26,8 +26,18 @@
             </button>
           </div>
         </div>
-        <div class="flex">
-          
+        <div class="payment mt-5 justify-center">
+          <span class="font-bold text-lg text-white">Payment</span>
+          <div class="flex">
+            <div class="mr-1">
+              <span class="text-white text-sm">Amount Pay</span>
+              <input class="w-full px-5 py-1 mt-1 mb-1 text-lg bg-yellow-400 text-black rounded-lg focus:outline-none" type="text" />
+            </div>
+            <div class="ml-1">
+              <span class="text-white text-sm text">Change</span>
+              <input class="w-full px-5 py-1 mt-1 mb-1 text-lg bg-yellow-400 text-black rounded-lg focus:outline-none" type="text" />
+            </div>
+          </div>
         </div>
       </form>
       <div class="w-full ml-5">
