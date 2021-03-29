@@ -32,25 +32,35 @@
         </table>
         <div class="paymentcard ml-5 mt-5 px-5 py-3 w-full ring-4 ring-yellow-600 bg-yellow-400 rounded-lg">
           <div class="font-bold">Payment</div>
-          <div class="flex space-x-4">
-            <div class="w-full mt-5">
-              <span>Total Amount</span>
-              <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalamount" disabled />
+          <div>
+            <div class="flex space-x-4">
+              <div class="w-full mt-5">
+                <span>Total Amount</span>
+                <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalamount" disabled />
+              </div>
+              <div class="w-full mt-5">
+                <span>Changed</span>
+                <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalchange" disabled />
+              </div>
             </div>
-            <div class="w-full mt-5">
-              <span>Changed</span>
-              <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalchange" disabled />
+            <div class="flex">
+              <div class="flex w-full mt-5">
+                <form class="w-full" @submit.prevent="jerome">
+                  <input class="rounded-l-xl w-full px-3 py-3 text-right focus:outline-none" type="text" />
+                </form>
+                <button class="bg-blue-900 px-3 text-white focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                </button>
+                <button class="bg-gray-900 px-3 rounded-r-xl text-white focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+              </div>
             </div>
           </div>
           <div class="flex">
-            <div class="w-full mt-5">
-              <input class="w-full rounded-xl px-3 py-3 text-right text-2xl focus:outline-none" type="text" placeholder="Amount Pay" v-model="amountpay" />
-            </div>
-          </div>
-          <div class="flex">
-            <div class="flex w-full mt-5 justify-end space-x-2">
-              <button class="bg-red-600 px-5 py-2 rounded-xl text-white focus:outline-none">Cancel Transaction</button>
-              <button class="bg-gray-900 px-5 py-2 rounded-xl text-white focus:outline-none">Save Transaction</button>
+            <div class="hidden w-full mt-5 justify-end">
+              <button class="bg-red-600 hover:bg-red-700 px-3 rounded-l-full text-xs text-white focus:outline-none">Cancel Transaction</button>
+              <button class="bg-gray-800 hover:bg-gray-900 px-3 py-1 rounded-r-full text-xs text-white focus:outline-none">Save Transaction</button>
             </div>
           </div>
         </div>
