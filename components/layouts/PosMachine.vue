@@ -1,10 +1,10 @@
 <template>
-  <div class="card ml-32 shadow-xl mr-5 mt-5 px-5 py-5 rounded-xl bg-yellow-400">
-    <div class="machine">
+  <div class="card ml-32 shadow-xl mr-5 mt-5 rounded-xl bg-yellow-400">
+    <div class="machine px-5 py-5">
       <div class="w-full">
         <input class="w-full px-5 py-3 mt-1 mb-1 text-sm ring-4 ring-yellow-600 bg-gray-100 text-black rounded-lg focus:outline-none" type="text" placeholder="Enter Item Code" />
       </div>
-      <div>
+      <div class="flex">
         <table class="table-auto mt-5 w-full ring-4 ring-yellow-600 rounded-lg">
           <thead class="text-left ml-20">
             <tr class="h-14 border-b-4 border-yellow-600">
@@ -30,9 +30,34 @@
             </div>
           </tfooter>
         </table>
+        <div class="paymentcard ml-5 mt-5 px-5 py-3 w-full ring-4 ring-yellow-600 bg-yellow-400 rounded-lg">
+          <div class="font-bold">Payment</div>
+          <div class="flex space-x-4">
+            <div class="w-full mt-5">
+              <span>Total Amount</span>
+              <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalamount" disabled />
+            </div>
+            <div class="w-full mt-5">
+              <span>Changed</span>
+              <input class="w-full rounded-xl px-3 py-3 font-bold tracking-wider text-right text-3xl focus:outline-none" type="text" v-model="totalchange" disabled />
+            </div>
+          </div>
+          <div class="flex">
+            <div class="w-full mt-5">
+              <input class="w-full rounded-xl px-3 py-3 text-right text-2xl focus:outline-none" type="text" placeholder="Amount Pay" v-model="amountpay" />
+            </div>
+          </div>
+          <div class="flex">
+            <div class="flex w-full mt-5 justify-end space-x-2">
+              <button class="bg-red-600 px-5 py-2 rounded-xl text-white focus:outline-none">Cancel Transaction</button>
+              <button class="bg-gray-900 px-5 py-2 rounded-xl text-white focus:outline-none">Save Transaction</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="h-5 bg-gray-100"></div>
+ </div>
 </template>
 
 <script>
@@ -41,6 +66,7 @@ export default {
     return {
       order_no: '3201',
       txtqty: '1',
+      totalamount: '500.75',
       orders: [
         {
           item_id: '8992112086213',
